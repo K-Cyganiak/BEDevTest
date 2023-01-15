@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Core.Models.Blocks;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+    var blocks = Model.Value<IEnumerable<BlockListItem>>("components");
+}
+@if (Model is not null && blocks is not null && blocks.Any())
+{
+    @*    foreach (var block in blocks)
+    {
+        <div>
+            @await Html.PartialAsync("~/Views/" + $"{block.Content.ContentType.Alias}.cshtml", (ContentModels.WeatherComponent)block.Content)
+        </div>
+    }*@
+    <div>
+        @await Component.InvokeAsync("Weather");
+    </div>
+} 
