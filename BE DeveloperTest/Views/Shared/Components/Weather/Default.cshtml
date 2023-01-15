@@ -1,0 +1,11 @@
+﻿@using BE_DeveloperTest.Models.Api.Weather;
+@model WeatherData;
+
+@if (Model.Code)
+
+    <div>
+        <form method="get">
+            <input name="location" type="text" />
+            <input type="submit" value="submit" />
+        </form>
+    </div>
