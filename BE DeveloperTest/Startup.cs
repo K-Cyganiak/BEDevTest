@@ -37,6 +37,10 @@ namespace BE_DeveloperTest
                 .AddWebsite()
                 .AddComposers()
                 .Build();
+
+            services.AddScoped<IWeatherService, WeatherService>();
+            services.AddHttpClient();
+            services.Configure<OpenWeatherApiSettings>(_config.GetSection("OpenWeatherApiSettings"));
         }
 
         /// <summary>
