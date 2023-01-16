@@ -23,7 +23,7 @@
 
             var weatherData = await _weatherService.GetWeatherDataAsync(location);
 
-            return View(new WeatherData());
+            return View(weatherData);
         }
 
         private async Task<string> GetWeatherData(string location = "London")
