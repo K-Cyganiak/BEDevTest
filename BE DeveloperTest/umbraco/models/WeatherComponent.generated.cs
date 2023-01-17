@@ -50,12 +50,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Locations
+		/// Location: London,GB
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("locations")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> Locations => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "locations");
+		[ImplementPropertyType("location")]
+		public virtual string Location => this.Value<string>(_publishedValueFallback, "location");
+
+		///<summary>
+		/// Number Of Days
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.1.0+bad9148")]
+		[ImplementPropertyType("numberOfDays")]
+		public virtual int NumberOfDays => this.Value<int>(_publishedValueFallback, "numberOfDays");
 
 		///<summary>
 		/// Title
