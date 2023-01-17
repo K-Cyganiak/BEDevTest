@@ -38,6 +38,8 @@ namespace BE_DeveloperTest
                 .AddComposers()
                 .Build();
 
+            services.AddResponseCaching();
+
             services.AddScoped<IWeatherService, WeatherService>();
             services.AddHttpClient();
             services.Configure<OpenWeatherApiSettings>(_config.GetSection("OpenWeatherApiSettings"));
@@ -54,7 +56,7 @@ namespace BE_DeveloperTest
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseResponseCaching();
             app.UseUmbraco()
                 .WithMiddleware(u =>
                 {

@@ -4,8 +4,6 @@
 
     public interface IWeatherService
     {
-        Task<IEnumerable<WeatherData>> GetWeatherDatasAsync(string[] locations);
-
-        Task<WeatherData> GetWeatherDataAsync(string location);
+        Task<WeatherViewModel> GetWeatherDataAsync(string location, int numberOfDays);
     }
 }

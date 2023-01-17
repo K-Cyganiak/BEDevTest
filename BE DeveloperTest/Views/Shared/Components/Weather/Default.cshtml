@@ -1,18 +1,28 @@
 ﻿@using BE_DeveloperTest.Models.Api.Weather;
 @using System.Net;
-@model WeatherData;
+@model WeatherViewModel;
 
-@if (Model.Code == 200)
-{
+<div class="container">
+    <form method="get" class="form">
+        <input name="location" type="text" placeholder="@Model.City, @Model.Country" />
+        <input type="submit" value="Find" />
+    </form>
+    <section class="wrapper">
+        @foreach (var weatherDay in Model.WeatherDetails)
+        {
 
-    <div>
-        <form method="get">
-            <input name="location" type="text" />
-            <input type="submit" value="submit" />
-        </form>
-    </div>
-}
-else
-{
-    <div>Error encountered: @Model.Message</div>
-}
+            <div class="card card--fixedWidth @(weatherDay.WeatherCssClass)">
+                <div class="card__description">
+                    <div class="card__dayText">@weatherDay.Day</div>
+                    <div class="icon card__descriptionIcon">
+                        <img class="weatherIcon" src="~/assets/icons/@(weatherDay.Icon).svg" />
+                    </div>
+                    <div class="card__descriptionText">@weatherDay.WeatherDescription&deg;</div>
+                    <div class="card__descriptionTempC">@(weatherDay.TemperatureCelsius)&deg;C</div>
+                    <div class="card__descriptionTempF">@(weatherDay.TemperatureFahrenheit)&deg;F</div>
+                </div>
+            </div>
+
+        }
+    </section>
+</div>

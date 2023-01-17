@@ -5,8 +5,42 @@
     <Nullable>enable</Nullable>
     <RootNamespace>BE_DeveloperTest</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Assets\css\styles.css" />
+    <Content Remove="wwwroot\Assets\icons\01n.svg" />
+    <Content Remove="wwwroot\Assets\icons\02n.svg" />
+    <Content Remove="wwwroot\Assets\icons\03n.svg" />
+    <Content Remove="wwwroot\Assets\icons\04d.svg" />
+    <Content Remove="wwwroot\Assets\icons\09n.svg" />
+    <Content Remove="wwwroot\Assets\icons\10n.svg" />
+    <Content Remove="wwwroot\Assets\icons\11n.svg" />
+    <Content Remove="wwwroot\Assets\icons\13d.svg" />
+    <Content Remove="wwwroot\Assets\icons\50n.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Assets\css\styles.css" />
+    <None Include="wwwroot\Assets\icons\01n.svg" />
+    <None Include="wwwroot\Assets\icons\01d.svg" />
+    <None Include="wwwroot\Assets\icons\02n.svg" />
+    <None Include="wwwroot\Assets\icons\02d.svg" />
+    <None Include="wwwroot\Assets\icons\03n.svg" />
+    <None Include="wwwroot\Assets\icons\03d.svg" />
+    <None Include="wwwroot\Assets\icons\04d.svg" />
+    <None Include="wwwroot\Assets\icons\04n.svg" />
+    <None Include="wwwroot\Assets\icons\09n.svg" />
+    <None Include="wwwroot\Assets\icons\09d.svg" />
+    <None Include="wwwroot\Assets\icons\10n.svg" />
+    <None Include="wwwroot\Assets\icons\10d.svg" />
+    <None Include="wwwroot\Assets\icons\11n.svg" />
+    <None Include="wwwroot\Assets\icons\11d.svg" />
+    <None Include="wwwroot\Assets\icons\13d.svg" />
+    <None Include="wwwroot\Assets\icons\13n.svg" />
+    <None Include="wwwroot\Assets\icons\50n.svg" />
+    <None Include="wwwroot\Assets\icons\50d.svg" />
+  </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Humanizer.Core" Version="2.14.1" />
     <PackageReference Include="Umbraco.Cms" Version="11.1.0" />
   </ItemGroup>
 

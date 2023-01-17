@@ -1,0 +1,144 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.form, .wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.card {
+    /**
+   * Lay out the children of this container with
+   * flexbox, which is horizontal by default.
+   */
+    display: flex;
+    /**
+   * Rotate the main axis so that the children
+   * are laid out vertically.
+   */
+    flex-direction: column;
+    border: 1px solid #CAD0D2;
+    border-radius: 4px;
+    overflow: hidden;
+    min-width: 120px;
+    min-height: 240px
+}
+
+.card__description {
+    /**
+     * Lay out the children of this container with
+     * flexbox.
+     */
+    display: flex;
+    /**
+     * We're going to lay out this element's children
+     * just like in the "Centered prompt" example.
+     * First we'll rotate the main axis so that the
+     * children are laid out vertically.
+     */
+    flex-direction: column;
+    /**
+     * Just like in the "Centered prompt", we'll
+     * group the children in the center of their
+     * container.
+     */
+    justify-content: center;
+    /**
+     * And just like in the "Centered prompt" example,
+     * we'll align the children in the center, along
+     * the main axis.
+     */
+    align-items: center;
+    padding: 15px 0;
+}
+
+.card__descriptionIcon {
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+.weatherIcon {
+    height: 40px;
+}
+
+.clearsky {
+    background: linear-gradient(#ffdb4e, #ff9872);
+}
+
+.fewclouds {
+    background: linear-gradient(#03B9A5, #30ECEB);
+}
+
+.scatteredclouds, .brokenclouds, .overcastclouds {
+    background: linear-gradient(#3E93B2, #44EDEC);
+}
+
+.showerrain, .lightrain {
+    background: linear-gradient(#066E94, #6fd4fb);
+}
+
+.rain {
+    background: linear-gradient(#24A0CD, #6fd4fb);
+}
+
+.thunderstorm {
+    background: linear-gradient(#0A465D, #61A1BA);
+}
+
+.snow, .lightsnow {
+    background: linear-gradient(#74A3DE, #DCEDF4);
+}
+
+.mist {
+    background: linear-gradient(#919494, #D6D8D9);
+}
+
+.card__descriptionText {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    max-width: calc(100% - 30px);
+    text-transform: uppercase;
+}
+
+.card__descriptionTempC {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    max-width: calc(100% - 30px);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.card__descriptionTempF {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    max-width: calc(100% - 30px);
+    text-transform: uppercase;
+}
+
+.card__dayText {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    max-width: calc(100% - 30px);
+}
+
+.card__price {
+    text-align: center;
+    color: #57727C;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-top: 1px solid #D7DBDD;
+    background-color: #EEF3F5;
+}
+
+.card--fixedWidth {
+    max-width: 120px;
+}
