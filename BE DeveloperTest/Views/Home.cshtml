@@ -8,13 +8,19 @@
 }
 @if (Model is not null && blocks is not null && blocks.Any())
 {
-    @*    foreach (var block in blocks)
+    foreach (var block in blocks)
     {
-        <div>
+        @*       <div>
             @await Html.PartialAsync("~/Views/" + $"{block.Content.ContentType.Alias}.cshtml", (ContentModels.WeatherComponent)block.Content)
+        </div>*@
+
+        <div>
+            @{
+                var weatherComponent = (ContentModels.WeatherComponent)block.Content;
+            }
+            <cache vary-by-query="location,days" expires-after="@TimeSpan.FromHours(3)">
+                @await Component.InvokeAsync("Weather", new { weatherComponent.Location, weatherComponent.NumberOfDays })
+            </cache>
         </div>
-    }*@
-    <div>
-        @await Component.InvokeAsync("Weather");
-    </div>
+    }
 } 
